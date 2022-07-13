@@ -1,28 +1,28 @@
-#include "holberton.h"
+#include "main.h"
 #include <stdio.h>
 
 /**
-  * _strcat - Concatenates two strings
-  * @dest: The destination string
-  * @src: The source string
+  * reverse_array - Reverses the content of an array of integers
+  * @a: An array of integers
+  * @n: Number of elements to swap
   *
-  * Return: A pointer to the resulting string dest
+  * Return: empty
   */
-char *_strcat(char *dest, char *src)
+void reverse_array(int *a, int n)
 {
-	int dlen = 0, i;
+	int *p, i, aux, k;
 
-	while (dest[dlen])
+	p = a;
+
+	for (i = 1; i < n; i++)
 	{
-		dlen++;
+		p++;
 	}
 
-	for (i = 0; src[i] != 0; i++)
+	for (k = 0; k < i / 2; k++)
 	{
-		dest[dlen] = src[i];
-		dlen++;
+		aux = a[k];
+		a[k] = *p;
+		*p = aux;
+		p--;
 	}
-
-	dest[dlen] = '\0';
-	return (dest);
-}
